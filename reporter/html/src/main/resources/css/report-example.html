@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenFastTrace HTML Report CSS Example</title>
+    <link rel="stylesheet" href="report.css">
+  </head>
+  <body>
+    <nav>
+      OpenFastTrace Demo
+      <span class="artifact">REQ</span>
+      <span class="tag">demo</span>
+      | <a href="#REQ-DEMO-0001">First item</a> &middot; <a href="#DSN-DEMO-0002">Second item</a>
+    </nav>
+
+    <main>
+      <section class="sitem" id="REQ-DEMO-0001">
+        <details open>
+          <summary title="REQ-DEMO-0001">
+            <span class="title">System shall provide dark mode report preview</span>
+            <small>, rev. 7, <span class="artifact">REQ</span> <span class="tag">ui</span></small>
+          </summary>
+
+          <p>
+            This is normal text with <strong>bold</strong>, <em>emphasis</em>, <code>inline code</code>,
+            and coverage markers <ins>covered</ins>, <del>over-covered</del>,
+            <span class="green">green</span>, <span class="red">red</span>.
+          </p>
+
+          <h6>Rationale:</h6>
+          <p>
+            A visible dark mode improves readability and matches the host IDE.
+            <small>Small metadata text is styled explicitly.</small>
+          </p>
+
+          <h6>Comment:</h6>
+          <p>
+            Hover this section to show the hidden details block.
+          </p>
+
+          <div class="details">
+            <p>This block uses <code>.sitem .details</code> and only appears on hover.</p>
+            <pre>
+if (prefersDarkTheme) {
+    apply("report.css");
+}
+            </pre>
+          </div>
+
+          <h6>Needs: <ins>dsn</ins>, req, <del>test</del></h6>
+
+          <p class="origin">
+            <a href="https://example.invalid/openfasttrace/specs/demo.md#L42">demo.md:42</a>
+          </p>
+
+          <div class="in">
+            <h6>In: 2</h6>
+            <ul>
+              <li><a href="#DSN-DEMO-0002">DSN-DEMO-0002</a></li>
+              <li><a href="#TST-DEMO-0003">TST-DEMO-0003</a> <em>(MISSING)</em></li>
+            </ul>
+          </div>
+
+          <div class="out">
+            <h6>Out: 1</h6>
+            <ul>
+              <li><a href="#ARC-DEMO-0004">ARC-DEMO-0004</a></li>
+            </ul>
+          </div>
+
+          <p class="id">REQ-DEMO-0001</p>
+        </details>
+      </section>
+
+      <section class="sitem" id="DSN-DEMO-0002">
+        <details>
+          <summary title="DSN-DEMO-0002">
+            <span class="title">Design describes report navigation</span>
+            <small>, rev. 3, <span class="artifact">DSN</span> <span class="tag">navigation</span></small>
+          </summary>
+          <p>Second item kept collapsed to test default details behavior.</p>
+          <p class="id">DSN-DEMO-0002</p>
+        </details>
+      </section>
+    </main>
+  </body>
+</html>
